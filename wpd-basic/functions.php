@@ -2,8 +2,14 @@
 
 // Add Theme features
 function wptd_theme_features() {
-add_theme_support( 'title-tag' );
-add_theme_support( 'menus' );
+load_theme_textdomain('wpd-basic', get_template_directory() . '/languages' );
+
+
+    add_theme_support( 'title-tag' );
+    add_theme_support( 'menus' );
+
+
+    
     
     
     
@@ -20,7 +26,7 @@ add_theme_support( 'custom-logo',  array(
 //nav menus
 register_nav_menus(
     array(
-      'header-menu' => __( 'Header Menu' )
+      'header-menu' => __( 'Header Menu', 'wpd-basic' ),
      
      )
    );
@@ -29,7 +35,35 @@ register_nav_menus(
 
 add_action( 'after_setup_theme', 'wptd_theme_features' );
 
-// Include CSS and JS
+ //regester sidebars
+ add_action( 'widgets_init', 'wpd_register_sidebars' );
+ function wpd_register_sidebars() {
+     /* Register the 'primary' sidebar. */
+     register_sidebar(
+         array(
+             'id'            => 'sidebar-1',
+            'name'          => __( 'default Sidebar', 'wpd-basic' ),
+             'description'   => __( 'At widgets to show on sidebar .', 'wpd-basic'),
+             'before_widget' => '<div id="%1$s" class="widget %2$s">',
+             'after_widget'  => '</div>',
+             'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )
+     );
+     register_sidebar(
+        array(
+            'id'            => 'footer-widgets',
+           'name'          => __( 'Footer widgets', 'wpd-basic'),
+            'description'   => __( 'Add widgets is to show inside site footer .','wpd-basic'  ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2 class="widget-title">',
+           'after_title'   => '</h2>',
+       )
+    );    
+}
+
+    // Include CSS and JS
 add_action( 'wp_enqueue_scripts', 'wptd_theme_css_js' );
 function wptd_theme_css_js() {
     
@@ -49,3 +83,21 @@ function add_icon_item_has_submenu( $classes, $menu_item, $args) {
     return $classes;
 }
 add_filter('nav_menu_css_class', 'add_icon_item_has_submenu', 10, 3);
+// filter excerpt more
+
+function wpd_filter_excerpt_more(){
+    return sprintf(  
+        '<a href="%1$s"class="more-link">%2$s<span class="screen_reader_text">"%3$s"</spam></a>',
+    get_permalink(),
+  esc_html__('Read More', 'wpd-basic' ),
+   get_the_title()
+);
+}
+add_filter('excerpt_more','wpd_filter_excerpt_more');
+//Change Excerpt Length
+function wpd_filter_excerpt_length() {
+    return 35;
+}
+add_filter('excerpt_length', 'wpd_filter_excerpt_length',);
+ //Load template-tags.php                                                                                  
+require_once get_template_directory(). '/inc/template-tags.php'; 

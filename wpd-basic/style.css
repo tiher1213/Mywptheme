@@ -16,7 +16,7 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-
+@charset "UTF-8";
 
 
 /* General Styles */
@@ -750,7 +750,8 @@ body:not(.home) .post,
 }
 
 .more-link {
-   display: table;
+  display: table;
+margin-top: 15px;
 }
 
 .post-navigation {
@@ -758,17 +759,18 @@ body:not(.home) .post,
 }
 
 .navigation .nav-links {
-   display: flex;
-   justify-content: space-between;
-   line-height: 2.4;
+  line-height: 2.4;
+}
+.pagination .page-numbers {
+ padding: 0 5px;  
 }
 
-.nav-previous a::before {
+.nav-previous a::before,.pagination a.prive::before {
    content: '«';
    margin-right: 3px;
 }
 
-.nav-next a::after {
+.nav-next a::after, .pagination a.next::after {
    content: '»';
    margin-left: 3px;
 }
