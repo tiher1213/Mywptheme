@@ -5,18 +5,21 @@
   <main id="main" class="site-main">
     
 <?php 
-if( have_posts() ) :
+
 while( have_posts() ) : the_post();
 
 get_template_part('template-parts/content',get_post_type());
  endwhile;
   
-  the_posts_pagination();
-  else :
+  the_post_navigation(
+    array(
+			'prev_text'          => esc_html__('previous post', 'wpd-basic'),
+			'next_text'          =>esc_html__('next post', 'wpd-basic'), 
+    )
+  );
+ 
 
-    get_template_part( 'template-parts/content', 'none');
 
-  endif;
   ?> 
     
   </main><!-- #main -->

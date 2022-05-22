@@ -760,18 +760,35 @@ margin-top: 15px;
 
 .navigation .nav-links {
   line-height: 2.4;
+  display: flex;
 }
+.navigation .nav-previous .navigation .nav-next{
+width: 50%;
+flex: auto;   
+}
+.navigation .nav-next{
+   text-alig: right;
+}
+ 
+
+
+
+.pagination .nav-links {
+   display: inline-block;
+ }
+ 
+
 .pagination .page-numbers {
  padding: 0 5px;  
 }
 
 .nav-previous a::before,.pagination a.prive::before {
-   content: '«';
+   content: '\00AB';
    margin-right: 3px;
 }
 
 .nav-next a::after, .pagination a.next::after {
-   content: '»';
+   content: '\00BB';
    margin-left: 3px;
 }
 
@@ -781,7 +798,7 @@ margin-top: 15px;
 }
 
 .archive .page-header,
-.search .page-header {
+.search:not(.search-no-results) .page-header {
    background: #fff;
    padding: 2em;
    border-left: 2px solid var(--dark-gray);
