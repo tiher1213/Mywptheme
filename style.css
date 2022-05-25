@@ -762,7 +762,7 @@ margin-top: 15px;
   line-height: 2.4;
   display: flex;
 }
-.navigation .nav-previous .navigation .nav-next{
+.navigation .nav-previous, .navigation .nav-next{
 width: 50%;
 flex: auto;   
 }
@@ -770,9 +770,6 @@ flex: auto;
    text-align: right;
 }
  
-
-
-
 .pagination .nav-links {
    display: inline-block;
  }
