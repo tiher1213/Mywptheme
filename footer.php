@@ -1,21 +1,24 @@
+
+ <?php if( ! is_page_template('template/100-width.php')){ ?>
 </div><!-- .container -->
-       </div><!--  #content -->
+<?php } ?>
+</div><!--  #content -->
 
-      <footer id="colophon" class="site-footer">
-         <div class="container">
-        
-         <?php dynamic_sidebar('footer-widgets');?>   
-         
-        
+<footer id="colophon" class="site-footer">
+<div class="container">
 
-            <p style="font-size: 14px; color: #bbb;">Copyright &copy; 2020 AWD-4, All rights Reserved.<br>
-               Designed by <a href="#" target="_blank"><strong>Shujon Mahmud</strong></a></p>
-         </div>
-      </footer>
-   </div>
-   <!--/ #page -->
+<?php dynamic_sidebar('footer-widgets');?>   
 
-   <?php wp_footer(); ?>
+
+
+<p style="font-size: 14px; color: #bbb;">Copyright &copy; 2020 AWD-4, All rights Reserved.<br>
+   Designed by <a href="#" target="_blank"><strong>Shujon Mahmud</strong></a></p>
+</div>
+</footer>
+</div>
+<!--/ #page -->
+
+<?php wp_footer(); ?>
 </body>
 
 </html>

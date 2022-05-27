@@ -6,9 +6,9 @@ load_theme_textdomain('wpd-basic', get_template_directory() . '/languages' );
 
 
     add_theme_support( 'title-tag' );
+    
     add_theme_support( 'menus' );
-
-
+    add_theme_support(  'custom-spacing' );
     
     
     

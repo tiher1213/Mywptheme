@@ -1,11 +1,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<div class="entry-header">
-<?php  
-the_title('<h1 class="entry-title">', '</h1>'); 
-?> 
+<?php if( ! is_page_template('template/100-width.php')){ ?>
+
+    <div class="entry-header">
+    <?php the_title('<h1 class="entry-title">', '</h1>'); ?>S
 
 </div><!-- .entry-header -->
-
+<?php } ?>
 <div class="entry-content">
 <?php 
 

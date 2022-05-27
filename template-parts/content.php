@@ -31,6 +31,6 @@ the_excerpt();
 </div><!-- .entry-content -->
 
 <div class="entry-footer">
-<?php wpd_entry_footer?>
+<?php wpd_entry_footer();?>
 </div><!-- .entry-footer -->
 </article>
