@@ -670,10 +670,18 @@ textarea:focus {
    }
 }
 
-body:not(.home) .post,
+ .post,
 .site-main .page {
    background-color: var(--content-bg);
    padding: var(--box-padding);
+}
+body.home:not(.blog) .post{
+   background-color: transparent;
+   padding: 0;
+}
+
+body.home:not(.blog) .site-main .page {
+  padding: 0; 
 }
 
 .blog .post {
@@ -762,7 +770,7 @@ margin-top: 15px;
   line-height: 2.4;
   display: flex;
 }
-.navigation .nav-previous, .navigation .nav-next{
+.navigation .nav-previous,    .navigation .nav-next{
 width: 50%;
 flex: auto;   
 }

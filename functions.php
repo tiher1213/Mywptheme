@@ -8,9 +8,36 @@ load_theme_textdomain('wpd-basic', get_template_directory() . '/languages' );
     add_theme_support( 'title-tag' );
     
     add_theme_support( 'menus' );
+    
     add_theme_support(  'custom-spacing' );
-    
-    
+    add_theme_support(  'editor-font-sizes',array (
+        array(
+            'name'=>__('Small'),  
+            'size'=> 13,
+            'slug' => 'small',
+        ),
+        array(
+            'name'=>__('Medium'),  
+            'size'=> 20,
+            'slug' => 'medium',
+        ),
+        array(
+            'name'=>__('Large'),  
+            'size'=> 36,
+            'slug' => 'large',
+        ),
+        array(
+            'name'=>__('Extra large'),  
+            'size'=> 42,
+            'slug' => 'extra-large',
+        ),
+        array(
+         'name'=>__('huge'),  
+         'size'=> 52,
+         'slug' => 'huge',
+         )   
+        ));
+        
     
     
     //custom logo

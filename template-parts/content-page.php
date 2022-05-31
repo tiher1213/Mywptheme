@@ -1,8 +1,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<?php if( ! is_page_template('template/100-width.php')){ ?>
+<?php if( ! is_page_template('templates/100-width.php')){ ?>
 
     <div class="entry-header">
-    <?php the_title('<h1 class="entry-title">', '</h1>'); ?>S
+    <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
 
 </div><!-- .entry-header -->
 <?php } ?>
@@ -15,8 +15,4 @@ wp_link_pages();
 
 ?>
 </div><!-- .entry-content -->
-
-<div class="entry-footer">
-<?php wpd_entry_footer(); ?>
-</div><!-- .entry-footer -->
 </article>

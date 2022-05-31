@@ -1,5 +1,5 @@
 
- <?php if( ! is_page_template('template/100-width.php')){ ?>
+ <?php if( ! is_page_template('templates/100-width.php')){ ?>
 </div><!-- .container -->
 <?php } ?>
 </div><!--  #content -->
